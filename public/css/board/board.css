@@ -1,0 +1,74 @@
+body {
+	padding-top: 45px;
+}
+#mainArea hr{
+	clear: both;
+	margin: 0px;
+	padding-bottom: 3px;
+}
+#boardArea{
+	min-height: 200px;
+}
+
+#notesWidgets, #stickies{
+	list-style: none;
+	display: inline;
+}
+#notesWidgets li, #stickies li{
+	display: inline;
+	cursor: pointer;
+}
+
+/* styling notes images */
+#notesWidgets img.noteCard{
+    width: 120px;
+}
+#notesWidgets img.noteCard.divider{
+	width:2px;padding-left:20px;padding-right:20px
+}
+
+
+#stickies img.sticker{
+    padding: 20px;
+    text-align: middle;
+    
+}
+
+/*styling chat box */
+.chatHeader{
+	color: #999;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 18px;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	padding-bottom: 5px;
+}
+#messages { 
+	height: 342px; 
+	overflow: auto; 
+	background-color: white; 
+	list-style-type: none; 
+	margin-left: 0px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+#chatmsg{
+	margin-bottom: 0px;
+}
+#messages li { padding: 5px; border-bottom: 1px solid #f0f0f0; line-height: 1.5em}
+
+
+#messages span.user { margin: 0; text-align: left; font-weight: bold; display: inline; float: left }
+#messages .active { color: #000099 }
+#messages span.time { text-align: left; margin: 0 10px; display: block; float: left; color: #ccc !important; font-style: normal !important }
+#messages span.message { display: inline; padding: 0 0 0 10px }
+#messages li.error { color: #990000; font-style: italic; font-weight: bold }
+#messages li.server span.time,#messages li.error span.time { color: #999 }
+
+#editNoteForm{
+	max-width: 320px;
+}
+
+

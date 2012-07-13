@@ -1,0 +1,91 @@
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <script src="/js/underscore-min.js"></script>
+   <script src="/js/backbone-min.js"></script>
+
+
+   	<form id="add">
+	  <label>Title</label>
+	  <input id="title" type="text" />
+	  <label>Price</label>
+	  <input id="price" type="text" />
+	  <input type="submit" value="save" />
+	</form> 
+
+
+   <div id="yourcart"></div>
+
+
+<script>
+  	$(document).ready(function(){
+  		
+  		// reset underscore template tag so that it does not conflict with ejs
+  		_.templateSettings = {
+		  interpolate : /\{\{(.+?)\}\}/g,
+		  escape      : /\{\{-(.*?)\}\}/g
+		};
+  		
+  		var yourCart = $('#yourcart');
+  		
+  		var Item = Backbone.Model.extend({
+		  	defaults: {
+		    	price: 35,
+		    	photo: "http://www.placedog.com/100/100"
+		    }
+		});
+		
+		var Cart = Backbone.Collection.extend({
+		  model: Item
+		});
+		
+		var items = [
+		  { title: "Macbook Air<script>", price: 799 },
+		  { title: "Macbook Pro", price: 999 },
+		  { title: "The new iPad", price: 399 },
+		  { title: "Magic Mouse", price: 50 },
+		  { title: "Cinema Display", price: 799 }
+		];
+		
+		var cartCollection = new Cart(items);
+	
+		var ItemView = Backbone.View.extend({
+		  tagName: "div",
+		  className: "item-wrap",
+		  template: $("#itemTemplate").html(),
+		
+		  render: function() {
+		    var templ = _.template(this.template);
+		    this.$el.html(templ(this.model.toJSON()));
+		    return this;
+		  }
+		});	
+	
+		var CartCollectionView = Backbone.View.extend({
+		  el: "#yourcart",
+		  initialize: function() {
+		    this.collection = cartCollection;
+		    this.render();
+		  },
+		  render: function() {
+		    this.collection.each(function(item) {
+		      this.renderItem(item);
+		    }, this);
+		  },
+		  renderItem: function(item) {
+		    var itemView = new ItemView({ model: item });
+		    this.$el.append(itemView.render().el); 
+		  }
+		});
+		
+		var cart = new CartCollectionView;		
+	});
+	
+  
+</script>
+
+
+<script id="itemTemplate" type="text/template">
+    <div>
+      <h2>{{- title}} </h2>
+      <h4>&pound;{{price}}</h4>
+    </div>
+</script>

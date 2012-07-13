@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Real Time Discussion Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real Time Discussion Board">
+    <meta name="author" content="Ngo The Hung">
+
+    <!-- bootstrap styles -->
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+    
+    <!-- board css -->
+    <link href="/css/board/board.css" rel="stylesheet">
+    
+  
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+
+	    
+</head>
+
+<body>
+
+	<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/board">Real Time Discussion Board</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="http://ngo-hung.com/">Home</a></li>
+              <li><a href="http://ngo-hung.com/pages/projects" target="_blank">View project on Github</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <!-- <?php echo $content; ?> -->
+		
+	<%- body %>
+
+    
+    <!-- Placed at the end of the document so the pages load faster -->
+     
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/jquery-ui-1.8.21.drag.drop.min.js"></script>
+    <script src="/js/underscore-min.js"></script>
+    <script src="/js/backbone-min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/kinetic-core.min.js"></script> <!-- 3.10 -->
+    
+    <script src="/socket.io/socket.io.js"></script>
+	
+	<script src="/js/hhutil/util.js"></script>
+	<script src="/js/hhutil/widgets.js"></script>
+	
+	<script src="/js/board/models.js"></script>
+	<script src="/js/board/board.js"></script>
+	
+    
+  </body>
+</html>
+
