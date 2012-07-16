@@ -3,17 +3,22 @@ Node Discussion Board
 
 Simple real time discussion board &amp; chat written in Node.js, KineticJS, jQuery UI &amp; Backbone.
 
-Inspired by [scrumblr](https://github.com/aliasaria/scrumblr) project. Dragging and dropping use HTML5 canvas with the help of KineticJS.
+Inspired by [scrumblr](https://github.com/aliasaria/scrumblr) project. 
+Dragging and dropping use HTML5 canvas with the help of KineticJS.
 Notes can be dragged from desktop or mobile devices such as iPad.
 
 To run the app, just type:
-% node app.js
+
+$ node app.js
 
 and access 
-http://localhost:3000/board
+
+<http://localhost:3000/board>
 
 There are 2 mini-modules within the app:
+
 1) Chat Module
+
 2) Discussion Blackboard
 
 Chat Module is built mainly with Backbone models and Socket.io.
@@ -23,7 +28,8 @@ There is no persistency in the app. All data are stored in memory. It should be 
 There is a limit on the maximum number of chat messages, clients or notes that can be created.
 
 Important files:
+
 - routes/index.js ==> Most of the logic for server side
 - js/board/models.js ==> Chat Models
-  js/board/board.js ==> Main Client Logic
-  js/hhutil/widgets.js ==> Note Models
+- js/board/board.js ==> Main Client Logic
+- js/hhutil/widgets.js ==> Note Models
