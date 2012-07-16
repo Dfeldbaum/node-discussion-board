@@ -7,6 +7,11 @@ Inspired by [scrumblr](https://github.com/aliasaria/scrumblr) project.
 Dragging and dropping use HTML5 canvas with the help of KineticJS.
 Notes can be dragged from desktop or mobile devices such as iPad.
 
+<img width="600" src="http://ngo-hung.com/files/images/MyBoard.png">
+
+- [Blog Link](http://www.ngo-hung.com/blog/2012/07/14/real-time-discussion-board-experiment)
+- [Demo](http://ngo-hung.com/project/myboard)
+
 To run the app, just type:
 
 $ node app.js
